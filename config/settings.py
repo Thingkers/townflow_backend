@@ -16,3 +16,6 @@ from config.production_settings import *
 # Override with environment variables if needed
 if os.environ.get('DEBUG'):
     DEBUG = os.environ.get('DEBUG') == 'True'
+
+# AUTH_USER_MODEL = 'authentication.User'
+AUTH_USER_MODEL = 'authentication.User'

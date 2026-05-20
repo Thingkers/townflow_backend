@@ -7,6 +7,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-change-this-in
 DEBUG = False
 ALLOWED_HOSTS = ['townflow.riverviewpabna.com', 'api.riverviewpabna.com', 'riverviewpabna.com']
 
+REST_FRAMEWORK = {
+    # THIS EXPLICIT LINE REFIRES THE SCHEMA ENDPOINT
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -14,8 +19,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'corsheaders',
     'rest_framework',
+    'drf_spectacular',
+
+    # --- Local Subdirectory Apps ---
+    'apps.alerts',
+    'apps.authentication',
+    'apps.blood_donation',
+    'apps.community_feed',
+    'apps.digital_library',
+    'apps.events_calendar',
+    'apps.file_manager',
+    'apps.home',
+    'apps.local_jobs',
+    'apps.local_services',
+    'apps.ocr_processing',
+    'apps.onboarding',
+    'apps.profile',
+    'apps.report_issues',
+    'apps.shell',
+    'apps.splash',
+    'apps.startup',
+    'apps.volunteer_hub',
 ]
 
 MIDDLEWARE = [
